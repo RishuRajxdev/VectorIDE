@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Vibecode Editor – AI-Powered Web IDE
 
-## Getting Started
+![Vibecode Editor Thumbnail](public/vibe-code-editor-thumbnaail.svg)
 
-First, run the development server:
+**Vibecode Editor** is a blazing-fast, AI-integrated web IDE built entirely in the browser using **Next.js App Router**, **WebContainers**, **Monaco Editor**, and **local LLMs via Ollama**. It offers real-time code execution, an AI-powered chat assistant, and support for multiple tech stacks — all wrapped in a stunning developer-first UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🔐 **OAuth Login with NextAuth** – Supports Google & GitHub login.
+- 🎨 **Modern UI** – Built with TailwindCSS & ShadCN UI.
+- 🌗 **Dark/Light Mode** – Seamlessly toggle between themes.
+- 🧱 **Project Templates** – Choose from React, Next.js, Express, Hono, Vue, or Angular.
+- 🗂️ **Custom File Explorer** – Create, rename, delete, and manage files/folders easily.
+- 🖊️ **Enhanced Monaco Editor** – Syntax highlighting, formatting, keybindings, and AI autocomplete.
+- 💡 **AI Suggestions with Ollama** – Local models give you code completion on `Ctrl + Space` or double `Enter`. Accept with `Tab`.
+- ⚙️ **WebContainers Integration** – Instantly run frontend/backend apps right in the browser.
+- 💻 **Terminal with xterm.js** – Fully interactive embedded terminal experience.
+- 🤖 **AI Chat Assistant** – Share files with the AI and get help, refactors, or explanations.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧱 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+| Layer         | Technology                                   |
+|---------------|----------------------------------------------|
+| Framework     | Next.js 15 (App Router)                      |
+| Styling       | TailwindCSS, ShadCN UI                       |
+| Language      | TypeScript                                   |
+| Auth          | NextAuth (Google + GitHub OAuth)             |
+| Editor        | Monaco Editor                                |
+| AI Suggestion | Ollama (LLMs running locally via Docker)     |
+| Runtime       | WebContainers                                |
+| Terminal      | xterm.js                                     |
+| Database      | MongoDB (via DATABASE_URL)                   |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
