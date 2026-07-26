@@ -1,34 +1,19 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
-  provider = "prisma-client-js"
-
+  provider = "prisma-client"
+  output   = "../generated/prisma"
 }
+
 datasource db {
   provider = "mongodb"
   url = env("DATABASE_URL")
-  
-}
-enum UserRole{
-  ADMIN 
-  USER 
-  PREMIUM_USER
 }
 
-model User {
-  id            String          @id @default(auto()) @map("_id") @db.ObjectId
-  name          String?
-  email         String?         @unique
-  emailVerified DateTime?
-  image         String?
-  
-  account Account[]
-  role UserRole @default(USER)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+
+enum UserRole{
+  ADMIN
+  USER
+  PREMIUM_USER
+
 }
 model Account {
   id                String  @id @default(auto()) @map("_id") @db.ObjectId
@@ -42,11 +27,23 @@ model Account {
   token_type        String?
   scope             String?
   id_token          String? @db.String
+  session_state     String?
+ 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
  
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
  
   @@unique([provider, providerAccountId])
-  @@index([userId])
+}
+
+model User{
+  id String @id @default(cuid()) @map("_id")
+  name String?
+  email String@unique
+  image String?
+  accounts Account[]
+  role UserRole @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
